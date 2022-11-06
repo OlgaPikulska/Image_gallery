@@ -1,5 +1,5 @@
 import { galleryItems } from "./gallery-items.js";
-//import SimpleLightbox from "simplelightbox";
+
 // Change code below this line
 
 console.log(galleryItems);
@@ -18,11 +18,11 @@ gallery.addEventListener("click", (event) => {
   if (event.target.nodeName !== "IMG") {
     return;
   }
-  //   const modal = document.createElement("div");
-  //   const newPic = document.createElement("img");
-  //   newPic.src = event.target.getAttribute("data-source");
-  //   modal.append(newPic);
 
-  let lightbox = new SimpleLightbox(".gallery a");
-  //console.log(lightbox.close);
+  let lightbox = new SimpleLightbox(".gallery a", {
+    captions: true,
+    captionsData: "alt",
+    captionDelay: 250,
+    enableKeyboard: true,
+  });
 });
