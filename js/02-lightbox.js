@@ -13,16 +13,7 @@ const markup = galleryItems
   .join("");
 gallery.innerHTML = markup;
 
-gallery.addEventListener("click", (event) => {
-  event.preventDefault();
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-
-  let lightbox = new SimpleLightbox(".gallery a", {
-    captions: true,
-    captionsData: "alt",
-    captionDelay: 250,
-    enableKeyboard: true,
-  });
+let lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
 });
